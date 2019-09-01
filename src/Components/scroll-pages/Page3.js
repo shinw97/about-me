@@ -19,7 +19,7 @@ class Page3 extends React.Component {
       height: height,
       width: this.myRef.current.clientWidth,
     });
-    console.log(this.myRef.current.clientHeight);
+    // console.log(this.myRef.current.clientHeight);
   }
 
   onclickImage = (modalIsOpened) =>{
@@ -36,10 +36,13 @@ class Page3 extends React.Component {
         <div className="w3-container w3-light-grey"
              style={{'padding': '60px 16px', 'maxHeight': '100%'}}>
           {/*style={!isOnWeb ? {'padding': '60px 16px', 'max-height': '100%'} : {'padding': '100px 16px'}} >*/}
-          <h3 className={'text-left'} style={{'padding': '0px 16px', 'width': this.state.mounted? this.state.width:''}}>Let's begin
-            with my basic biography</h3>
           <div className="w3-row-padding">
             <div className="w3-col m6 text-left" ref={this.myRef}>
+              <h3 className={'text-left'}
+                  style={{
+                    // 'padding': '0px 16px',
+                    'width': this.state.mounted? this.state.width:''}}>
+                Let's begin with some basic biography</h3>
 
               <p><br/>I am <b>Lim Shin Wei</b>, 22, a Malaysian boy from <b>Butterworth,
                 Penang</b>,

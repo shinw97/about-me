@@ -5,10 +5,10 @@ class Page2 extends React.Component {
 
   render() {
     return (
-        <div className="w3-container" style={{"padding":"100px 16px"}} id="about">
+        <div className="w3-container w3-raleway" style={{"padding":"100px 16px"}} id="about">
           <h3 className="w3-center">WHAT AM I?</h3>
           <p className="w3-center w3-large">Some overview simple facts about me.</p>
-          <div className="w3-row-padding w3-center" style={{"margin-top":"64px"}}>
+          <div className="w3-row-padding w3-center" style={{"marginTop":"64px"}}>
             <div className="w3-quarter">
               <i className="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"/>
               <p className="w3-large">A Computer Scientist,</p>

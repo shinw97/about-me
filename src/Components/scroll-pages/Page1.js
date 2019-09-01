@@ -6,7 +6,7 @@ class Page1 extends React.Component {
   render() {
     return (
         <div className={'full-height'}>
-          Hello World!
+          <span className={'w3-wide'}>Hello World!</span>
         </div>
     );
   }

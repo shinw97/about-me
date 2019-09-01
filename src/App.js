@@ -9,18 +9,18 @@ import InfoBar from './Components/scroll-pages/InfoBar';
 
 function App() {
   return (
-    <div>
-      <NavBar/>
-      <div className={'App'}>
-        <Page1/>
-        <Page2/>
-        <Page3/>
-        <InfoBar/>
-        <Page1/>
+      <div>
+        <NavBar/>
+        <div className={'App'}>
+          <Page1/>
+          <Page2/>
+          <Page3/>
+          <InfoBar/>
+          <Page1/>
 
+        </div>
+        <CreditBar/>
       </div>
-      <CreditBar/>
-    </div>
 
   );
 }

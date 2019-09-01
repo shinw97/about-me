@@ -8,34 +8,45 @@ class Page3 extends React.Component {
   }
 
   componentDidMount() {
-    const textHeight = this.myRef.current.clientHeight
-    const imgHeight = this.myRef.current.clientHeight * 1.5
+    const textHeight = this.myRef.current.clientHeight;
+    const imgHeight = this.myRef.current.clientHeight * 1.5;
 
-    const height = imgHeight - textHeight > 100 ? '' : imgHeight
+    const height = imgHeight - textHeight > 100 ? '' : imgHeight;
 
-    this.setState({...this.state,
+    this.setState({
+      ...this.state,
       mounted: true,
       height: height,
-      width: this.myRef.current.clientWidth
+      width: this.myRef.current.clientWidth,
     });
     console.log(this.myRef.current.clientHeight);
   }
+
+  onclickImage = (modalIsOpened) =>{
+    // console.log(document.getElementsByTagName('body'))
+    document.getElementById('img01').style.display = modalIsOpened ? 'none' : 'block'
+    // document.getElementsByTagName('body')[0].style.position = modalIsOpened ? 'fixed' : ''
+    // document.getElementsByTagName('body')[0].style.overflowY = modalIsOpened ? 'hidden' : 'scroll'
+  };
 
   render() {
     const isOnWeb = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent);
     return (
         <div className="w3-container w3-light-grey"
-             style={{'padding': '60px 16px', 'max-height': '100%'}}>
+             style={{'padding': '60px 16px', 'maxHeight': '100%'}}>
           {/*style={!isOnWeb ? {'padding': '60px 16px', 'max-height': '100%'} : {'padding': '100px 16px'}} >*/}
-          <h3 className={'text-left'} style={{'padding': '0px 16px'}}>Let's begin with my basic biography</h3>
+          <h3 className={'text-left'} style={{'padding': '0px 16px', 'width': this.state.mounted? this.state.width:''}}>Let's begin
+            with my basic biography</h3>
           <div className="w3-row-padding">
             <div className="w3-col m6 text-left" ref={this.myRef}>
 
-              <p><br/>I am <b>Lim Shin Wei</b>, 22, a Malaysian boy from <b>Butterworth, Penang</b>,
+              <p><br/>I am <b>Lim Shin Wei</b>, 22, a Malaysian boy from <b>Butterworth,
+                Penang</b>,
                 a small town located at the opposite bank of the lovely
                 UNESCO historical heritage city Georgetown.<br/><br/>
-                I am a <b>Computer Science graduate</b> from <b>University of Malaya</b>, and
+                I am a <b>Computer Science graduate</b> from <b>University of
+                  Malaya</b>, and
                 had been living in the metropolitan city of Kuala Lumpur during
                 my studies in the university.</p>
               <br/>
@@ -47,19 +58,39 @@ class Page3 extends React.Component {
             </div>
             <div className="w3-col m6"
 
-            style={this.state.mounted ? {'height' : this.state.height, } : {}}
-                 // style={{'padding': '15px 10px'}}
+                 style={this.state.mounted ?
+                     {'height': this.state.height} :
+                     {}}
+                // style={{'padding': '15px 10px'}}
             >
-              <img className="w3-image w3-round-large"
-                   src="https://leannetan97.github.io/test.jpg"
-                   alt="Buildings"
-                   style={{
-                     'max-width': '100%',//this.state.width,
-                     'max-height' : '100%',
-                   }}
+              <img
+                  className="w3-image w3-round-large w3-hover-opacity modimgresp"
+                  src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                  alt="Nature"
+                  style={{
+                    'maxWidth': '100%',//this.state.width,
+                    'maxHeight': '100%',
+                    'cursor': 'pointer'
+                  }}
+                  onClick={() => this.onclickImage(false)}
               />
             </div>
+
           </div>
+          <div id="img01" className="w3-modal"
+               onClick={() => this.onclickImage(true)}
+               style={{'display': 'none', 'zIndex': '9990'}}>
+
+            <div className="w3-modal-content w3-card-4 w3-animate-zoom w3-display-center" style={{'width': 'fit-content'}}>
+              <img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                   alt="Nature"
+                   style={{'width': '100%', 'cursor': 'pointer'}}/>
+            </div>
+            {/*<span*/}
+            {/*  className="w3-button w3-hover-red w3-xlarge w3-display-topright"*/}
+            {/*  style={{"top":"43px"}}>×</span>*/}
+          </div>
+
         </div>
     );
 

@@ -10,7 +10,7 @@ class InfoBar extends React.Component {
             <span className="w3-xlarge">University of Malaya</span>
           </div>
           <div className="w3-quarter">
-            Degree with<br/>
+            With Degree<br/>
             <span className="w3-xlarge">Bachelor of Computer Science (Artificial Intelligence)</span>
           </div>
           <div className="w3-quarter">

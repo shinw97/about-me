@@ -1,6 +1,5 @@
 import React from 'react';
 import '../Sections.css';
-import ScrollableAnchor from 'react-scrollable-anchor';
 
 class Page2 extends React.Component {
 

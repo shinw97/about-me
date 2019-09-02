@@ -51,7 +51,9 @@ class NavBar extends React.Component {
     let height = document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
     let scrolled = (winScroll / height) * 100 + 2;
-    document.getElementById('progress').style.width = scrolled + '%';
+    if (document.getElementById('progress')){
+      document.getElementById('progress').style.width = scrolled + '%';
+    }
   };
 
   render() {

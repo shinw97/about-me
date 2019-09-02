@@ -5,14 +5,15 @@
   "homepage": "https://shinw97.github.io/about-me/",
   "dependencies": {
     "gh-pages": "^2.1.1",
+    "jquery": "^3.4.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.1",
     "react-scripts": "3.1.1",
+    "react-scrollable-anchor": "^0.6.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "react-scrollable-anchor": "^0.6.1",
-    "jquery": "^3.4.1"
+    "react-recaptcha-google": "https://github.com/azizali/react-recaptcha-google.git"
   },
   "scripts": {
     "start": "react-scripts start",

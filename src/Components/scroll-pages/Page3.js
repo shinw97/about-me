@@ -30,8 +30,6 @@ class Page3 extends React.Component {
   };
 
   render() {
-    const isOnWeb = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent);
     return (
         <div className="w3-container w3-light-grey"
              style={{'padding': '60px 16px', 'maxHeight': '100%'}}>
@@ -40,8 +38,10 @@ class Page3 extends React.Component {
             <div className="w3-col m6 text-left" ref={this.myRef}>
               <h3 className={'text-left'}
                   style={{
-                    // 'padding': '0px 16px',
-                    'width': this.state.mounted? this.state.width:''}}>
+                    'padding': '10px 0px 10px 0px',
+                    // 'width': this.state.mounted? this.state.width:''
+                  }}
+              >
                 Let's begin with some basic biography</h3>
 
               <p><br/>I am <b>Lim Shin Wei</b>, 22, a Malaysian boy from <b>Butterworth,

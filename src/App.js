@@ -7,6 +7,7 @@ import CreditBar from './Components/CreditBar';
 import Page3 from './Components/scroll-pages/Page3';
 import InfoBar from './Components/scroll-pages/InfoBar';
 import ScrollableAnchor from 'react-scrollable-anchor';
+import ContactMe from './Components/scroll-pages/ContactMe';
 
 function App() {
   return (
@@ -29,6 +30,11 @@ function App() {
           <Page3/>
           <InfoBar/>
           <Page1/>
+
+          <ScrollableAnchor id={'contact-me'}>
+            <div/>
+          </ScrollableAnchor>
+          <ContactMe/>
 
         </div>
         <CreditBar/>

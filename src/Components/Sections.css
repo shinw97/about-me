@@ -9,3 +9,11 @@
     font-size: calc(10px + 2vmin);
     color: white;
 }
+
+.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    display: none;
+    padding: 12px;
+}

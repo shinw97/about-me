@@ -1,5 +1,6 @@
 import React from 'react';
 // import $ from 'jquery';
+import './Sections.css'
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -99,6 +100,7 @@ class NavBar extends React.Component {
                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="95"
                  style={{'width': '2%'}}/>
           </div>
+          <div className="success">Thanks for your message! Will get back to you as soon as possible.</div>
         </div>
     );
   }

@@ -1,5 +1,7 @@
 import React from 'react';
 import {ReCaptcha} from 'react-recaptcha-google';
+import '../Sections.css'
+import $  from 'jquery'
 
 class ContactMe extends React.Component {
   constructor(props) {
@@ -25,26 +27,6 @@ class ContactMe extends React.Component {
 
   };
 
-  verifyTokens = (token) => {
-    const params = {
-      method: 'POST', // or 'PUT'
-      body: JSON.stringify({token: token}), // data can be `string` or {object}!
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-
-    fetch('http://127.0.0.1:5000/verify-recaptcha/', params)
-        .then(res => res.json())
-        .then(response => {
-              // console.log(response);
-              if (response.success) {
-                this.setState({...this.state, verified: true});
-              }
-            },
-        ).catch(error => console.error('Error:', error));
-  };
-
   onLoadRecaptcha = () => {
     if (this.captchaDemo) {
       this.captchaDemo.reset();
@@ -52,8 +34,13 @@ class ContactMe extends React.Component {
   };
   verifyCallback = (recaptchaToken) => {
     // Here you will get the final recaptchaToken!!!
-    console.log(recaptchaToken, '<= your recaptcha token');
-    this.verifyTokens(recaptchaToken);
+    // console.log(recaptchaToken, '<= your recaptcha token');
+    document.forms.messageForm.submit();
+    this.setState({...this.state, clickedOnSend: false, verified: false});
+    document.forms.messageForm.reset();
+    $( "div.success" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
+    // alert('Message sent!');
+    // this.verifyTokens(recaptchaToken);
   };
 
   onExpired = () => {
@@ -66,18 +53,9 @@ class ContactMe extends React.Component {
       document.forms.messageForm.reportValidity();
       return;
     }
+    // console.log('hey')
     if (!this.state.clickedOnSend) {
       this.setState({...this.state, clickedOnSend: true});
-    } else {
-      // console.log(document.forms.messageForm.elements.Email.value)
-      if(this.state.verified){
-        document.forms.messageForm.submit();
-        this.setState({...this.state, clickedOnSend: false});
-        document.forms.messageForm.reset();
-        alert('Message sent!');
-        return
-      }
-      alert('Please complete the reCaptcha before sending messages.')
     }
   };
 
@@ -135,7 +113,7 @@ class ContactMe extends React.Component {
             {email}
             <br/>
             <p className="w3-center w3-large">... or drop a message here!</p>
-            <form action="http://127.0.0.1:5000/send-message/"
+            <form action="https://fierce-refuge-39123.herokuapp.com/send-message/"
                   method={'post'}
                   target="invisible" id={'messageForm'}
                   style={{
@@ -159,7 +137,7 @@ class ContactMe extends React.Component {
                 <button className="w3-left w3-button w3-black rounded"
                         type="button"
                         id={'send'}
-                    // disabled={!this.state.verified}
+                        disabled={this.state.clickedOnSend}
                         onClick={
                           this.clickOnSend.bind(this)
                         }
@@ -189,6 +167,7 @@ class ContactMe extends React.Component {
             <iframe id={'invisible'} name="invisible"
                     style={{'display': 'none'}}/>
           </div>
+
         </div>
     );
   }

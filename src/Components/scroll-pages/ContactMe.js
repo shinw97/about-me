@@ -23,7 +23,8 @@ class ContactMe extends React.Component {
     dummy.select();
     document.execCommand('copy');
     document.body.removeChild(dummy);
-    alert('Copied email to clipboard!\nshinw97@hotmail.com');
+    $( "#copiedEmail" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
+    // alert('Copied email to clipboard!\nshinw97@hotmail.com');
 
   };
 
@@ -38,7 +39,7 @@ class ContactMe extends React.Component {
     document.forms.messageForm.submit();
     this.setState({...this.state, clickedOnSend: false, verified: false});
     document.forms.messageForm.reset();
-    $( "div.success" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
+    $( "#thanksMessage" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
     // alert('Message sent!');
     // this.verifyTokens(recaptchaToken);
   };

@@ -100,7 +100,8 @@ class NavBar extends React.Component {
                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="95"
                  style={{'width': '2%'}}/>
           </div>
-          <div className="success">Thanks for your message! Will get back to you as soon as possible.</div>
+          <div className="success" id='thanksMessage'>Thanks for your message! Will get back to you as soon as possible.</div>
+          <div className="success" id='copiedEmail'>Email shinw97@hotmail.com copied to clipboard!</div>
         </div>
     );
   }

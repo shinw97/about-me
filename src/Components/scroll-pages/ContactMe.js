@@ -114,7 +114,7 @@ class ContactMe extends React.Component {
             {email}
             <br/>
             <p className="w3-center w3-large">... or drop a message here!</p>
-            <form action="https://fierce-refuge-39123.herokuapp.com/send-message/"
+            <form action="https://shinw97.pythonanywhere.com/send-message/"
                   method={'post'}
                   target="invisible" id={'messageForm'}
                   style={{

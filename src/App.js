@@ -8,6 +8,7 @@ import Page3 from './Components/scroll-pages/Page3';
 import InfoBar from './Components/scroll-pages/InfoBar';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import ContactMe from './Components/scroll-pages/ContactMe';
+import ComingSoon from './Components/scroll-pages/ComingSoon';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           </ScrollableAnchor>
           <Page3/>
           <InfoBar/>
-          <Page1/>
+          <ComingSoon/>
 
           <ScrollableAnchor id={'contact-me'}>
             <div/>

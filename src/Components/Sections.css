@@ -30,3 +30,11 @@
     display: none;
     padding: 12px;
 }
+
+.warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    display: none;
+    padding: 12px;
+}

@@ -36,6 +36,7 @@ class ContactMe extends React.Component {
   verifyCallback = (recaptchaToken) => {
     // Here you will get the final recaptchaToken!!!
     // console.log(recaptchaToken, '<= your recaptcha token');
+    $('#sendingMessage').fadeIn(300);
     const formEl = document.forms.messageForm;
 
     let formData = new FormData();
@@ -54,6 +55,7 @@ class ContactMe extends React.Component {
       body: formData,
     }).then(res => res.json())
         .then(resp => {
+          $('#sendingMessage').hide();
           if (resp.verified) {
             $('#thanksMessage').fadeIn(300).delay(3000).fadeOut(400);
           } else {

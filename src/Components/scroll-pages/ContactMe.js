@@ -1,7 +1,7 @@
 import React from 'react';
 import {ReCaptcha} from 'react-recaptcha-google';
-import '../Sections.css'
-import $  from 'jquery'
+import '../Sections.css';
+import $ from 'jquery';
 
 class ContactMe extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class ContactMe extends React.Component {
     dummy.select();
     document.execCommand('copy');
     document.body.removeChild(dummy);
-    $( "#copiedEmail" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
+    $('#copiedEmail').fadeIn(300).delay(3000).fadeOut(400);
     // alert('Copied email to clipboard!\nshinw97@hotmail.com');
 
   };
@@ -36,12 +36,32 @@ class ContactMe extends React.Component {
   verifyCallback = (recaptchaToken) => {
     // Here you will get the final recaptchaToken!!!
     // console.log(recaptchaToken, '<= your recaptcha token');
-    document.forms.messageForm.submit();
+    const formEl = document.forms.messageForm;
+
+    let formData = new FormData();
+    const keys = ['Name', 'Email', 'Subject', 'Message', 'g-recaptcha-response'];
+
+    for (let i = 0; i < keys.length; i++) {
+      formData.append(keys[i], formEl.elements[keys[i]].value);
+      // console.log(formEl.elements[keys[i]].value)
+    }
+    // console.log(formData.entries())
+
+    const SEND_MAIL_API = 'https://fierce-refuge-39123.herokuapp.com/send-message/';
+
+    fetch(SEND_MAIL_API, {
+      method: 'post',
+      body: formData,
+    }).then(res => res.json())
+        .then(resp => {
+          if (resp.verified) {
+            $('#thanksMessage').fadeIn(300).delay(3000).fadeOut(400);
+          } else {
+            $('#sendFailed').fadeIn(300).delay(3000).fadeOut(400);
+          }
+        });
     this.setState({...this.state, clickedOnSend: false, verified: false});
     document.forms.messageForm.reset();
-    $( "#thanksMessage" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
-    // alert('Message sent!');
-    // this.verifyTokens(recaptchaToken);
   };
 
   onExpired = () => {
@@ -114,7 +134,7 @@ class ContactMe extends React.Component {
             {email}
             <br/>
             <p className="w3-center w3-large">... or drop a message here!</p>
-            <form action="https://shinw97.pythonanywhere.com/send-message/"
+            <form action=""
                   method={'post'}
                   target="invisible" id={'messageForm'}
                   style={{

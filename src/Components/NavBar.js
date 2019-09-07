@@ -102,6 +102,8 @@ class NavBar extends React.Component {
           </div>
           <div className="success" id='thanksMessage'>Thanks for your message! Will get back to you as soon as possible.</div>
           <div className="success" id='copiedEmail'>Email shinw97@hotmail.com copied to clipboard!</div>
+          <div className="failure" id='sendFailed'>Sorry, something has went wrong with the server, please try again later or contact me in
+            other ways stated.</div>
         </div>
     );
   }

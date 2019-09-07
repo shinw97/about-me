@@ -47,8 +47,8 @@ class ContactMe extends React.Component {
     }
     // console.log(formData.entries())
 
-    const SEND_MAIL_API = 'https://fierce-refuge-39123.herokuapp.com/send-message/';
-
+    // const SEND_MAIL_API = 'https://fierce-refuge-39123.herokuapp.com/send-message/';
+    const SEND_MAIL_API = 'https://shinw97.pythonanywhere.com/send-message/';
     fetch(SEND_MAIL_API, {
       method: 'post',
       body: formData,

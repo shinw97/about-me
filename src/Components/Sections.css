@@ -38,3 +38,7 @@
     display: none;
     padding: 12px;
 }
+
+.hideme {
+    opacity:0;
+}

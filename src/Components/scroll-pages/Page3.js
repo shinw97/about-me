@@ -36,7 +36,7 @@ class Page3 extends React.Component {
           {/*style={!isOnWeb ? {'padding': '60px 16px', 'max-height': '100%'} : {'padding': '100px 16px'}} >*/}
           <div className="w3-row-padding">
             <div className="w3-col m6 text-left" ref={this.myRef}>
-              <h3 className={'text-left'}
+              <h3 className={'hideme text-left'}
                   style={{
                     'padding': '10px 0px 10px 0px',
                     // 'width': this.state.mounted? this.state.width:''
@@ -44,7 +44,7 @@ class Page3 extends React.Component {
               >
                 Let's begin with some basic biography</h3>
 
-              <p><br/>I am <b>Lim Shin Wei</b>, 22, a Malaysian boy from <b>Butterworth,
+              <p className={'hideme'}><br/>I am <b>Lim Shin Wei</b>, 22, a Malaysian boy from <b>Butterworth,
                 Penang</b>,
                 a small town located at the opposite bank of the lovely
                 UNESCO historical heritage city Georgetown.<br/><br/>
@@ -67,7 +67,7 @@ class Page3 extends React.Component {
                 // style={{'padding': '15px 10px'}}
             >
               <img
-                  className="w3-image w3-round-large w3-hover-opacity modimgresp"
+                  className="hideme w3-image w3-round-large w3-hover-opacity modimgresp"
                   src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                   alt="Nature"
                   style={{

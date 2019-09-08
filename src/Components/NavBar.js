@@ -1,6 +1,6 @@
 import React from 'react';
-// import $ from 'jquery';
-import './Sections.css'
+import $ from 'jquery';
+import './Sections.css';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -18,6 +18,24 @@ class NavBar extends React.Component {
     window.onscroll = () => {
       this.scrollBarProgress();
     };
+    $(window).scroll(function() {
+
+      /* Check the location of each desired element */
+      $('.hideme').each(function(i) {
+
+        let bottom_of_object = $(this).position().top + $(this).outerHeight()/2;
+        let bottom_of_window = $(window).scrollTop() + $(window).height();
+
+        /* If the object is completely visible in the window, fade it it */
+        if (bottom_of_window > bottom_of_object) {
+
+          $(this).animate({'opacity': '1'}, 1000);
+
+        }
+
+      });
+
+    });
   }
 
   clickOnItems = (e) => {
@@ -52,7 +70,7 @@ class NavBar extends React.Component {
     let height = document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
     let scrolled = (winScroll / height) * 100 + 2;
-    if (document.getElementById('progress')){
+    if (document.getElementById('progress')) {
       document.getElementById('progress').style.width = scrolled + '%';
     }
   };
@@ -100,11 +118,19 @@ class NavBar extends React.Component {
                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="95"
                  style={{'width': '2%'}}/>
           </div>
-          <div className="success" id='thanksMessage'>Thanks for your message! Will get back to you as soon as possible.</div>
-          <div className="success" id='copiedEmail'>Email shinw97@hotmail.com copied to clipboard!</div>
-          <div className="warning" id='sendingMessage'>I'm receiving your message, hold on...</div>
-          <div className="failure" id='sendFailed'>Sorry, something has went wrong with the server, please try again later or contact me in
-            other ways stated.</div>
+          <div className="success" id='thanksMessage'>Thanks for your message!
+            Will get back to you as soon as possible.
+          </div>
+          <div className="success" id='copiedEmail'>Email shinw97@hotmail.com
+            copied to clipboard!
+          </div>
+          <div className="warning" id='sendingMessage'>I'm receiving your
+            message, hold on...
+          </div>
+          <div className="failure" id='sendFailed'>Sorry, something has went
+            wrong with the server, please try again later or contact me in
+            other ways stated.
+          </div>
         </div>
     );
   }

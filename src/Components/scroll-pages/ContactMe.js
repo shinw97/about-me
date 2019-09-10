@@ -88,7 +88,7 @@ class ContactMe extends React.Component {
     // alert(isMobile);
 
     const email = isMobile ?
-        <div>
+        <div className={'hideme'}>
           <a href={'mailto:shinw97@hotmail.com'}
              style={{'textDecoration': 'none'}}>
             <button className="btn rounded-circle shadow"
@@ -102,7 +102,7 @@ class ContactMe extends React.Component {
           </a>
         </div>
         :
-        <div className="card mb-3 shadow w3-hover-light-grey"
+        <div className="hideme card mb-3 shadow w3-hover-light-grey"
              style={{
                'width': '30%',
                'margin': 'auto',
@@ -130,13 +130,15 @@ class ContactMe extends React.Component {
         <div className="w3-container w3-light-grey"
              style={{'padding': '100px 16px'}}
              id="contact">
-          <h3 className="w3-center">CONTACT</h3>
-          <p className="w3-center w3-large">Feel free to contact me at:</p>
+          <h3 className="w3-center hideme">CONTACT</h3>
+          <p className="w3-center w3-large hideme">Feel free to contact me at:</p>
           <div style={{'padding': '10px'}}>
             {email}
             <br/>
-            <p className="w3-center w3-large">... or drop a message here!</p>
-            <form action=""
+            <p className="w3-center w3-large hideme">... or drop a message here!</p>
+            <form
+                  className={'hideme'}
+                  action=""
                   method={'post'}
                   target="invisible" id={'messageForm'}
                   style={{

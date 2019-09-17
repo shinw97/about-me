@@ -1,25 +1,28 @@
 from flask import Flask
-from flask_mail import Mail
 from flask import request
 from flask import jsonify
-from flask import Response
 import requests
+
+import smtplib, ssl
+
+
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
 
 app = Flask(__name__)
 
-# from flask_cors import CORS
-# CORS(app)
+from flask_cors import CORS
+CORS(app, origins=['https://shinw97.github.io', 
+# 'http://localhost:3000'，'http://127.0.0.1:3000'
+])
 
-from flask_mail import Message
+port = 587  # For starttls
+smtp_server = "smtp.gmail.com"
+sender_email = '****'
+receiver_email = "****"
+password = "****"
 
-app.config['MAIL_SERVER']='smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'email@email.com'
-app.config['MAIL_PASSWORD'] = '*****'
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USE_SSL'] = True
-
-mail = Mail(app)
 
 @app.route("/send-message/", methods=['POST'])
 def index():
@@ -27,41 +30,61 @@ def index():
 		name = request.form['Name']
 		email = request.form['Email']
 		subject = request.form['Subject']
-		message = request.form['Message']
+		message_body = request.form['Message']
 		captcha_response = request.form['g-recaptcha-response']
-		
+
 		email_subject = '[shinw97.github.io] You got a new message!'
 
 		verified = verify(captcha_response)
 
 		if verified:
-			message =  'Subject: ' + subject + '\n' + 'Sender Name: ' + name + '\n' + 'Sender Email: ' + email + '\n\n' + message
+			body =  'Subject: ' + subject + '\n' + 'Sender Name: ' + name + '\n' + 'Sender Email: ' + email + '\n\n' + message_body
 
-			msg = Message(subject=email_subject,
-						body=message,
-						sender=email,
-						recipients=["shinw97@hotmail.com"])
-			mail.send(msg)
+			message = MIMEMultipart("alternative")
+			message["Subject"] = email_subject
+			message["From"] = sender_email
+			message["To"] = receiver_email
 
+			message.attach(MIMEText(body, 'plain'))
+
+			context = ssl.create_default_context()
+			try:
+				with smtplib.SMTP(smtp_server, port) as server:
+					# server.ehlo()  # Can be omitted
+					server.starttls(context=context)
+					# server.ehlo()  # Can be omitted
+					server.login(sender_email, password)
+					server.sendmail(sender_email, receiver_email, message.as_string())
+			except Exception as e:
+				raise e
+				response = jsonify({
+					'verified': False,
+					})
+				return response
+			
 			print(message)
 			response = jsonify({
-					'status': 'verified',
+					'verified': True,
 					})
 			return response
+		
 		print('unverified')
 		response = jsonify({
-					'status': 'unverified',
+					'verified': False,
 					})
 		return response
 	except Exception as e:
 		raise e
-		return str(e)
+		response = jsonify({
+					'verified': False,
+					})
+		return response
 
 
 
 
 def verify(token):
-	SECRET_KEY = '6Ld_OrYUAAAAAGaMoREvGl5IqVHiMTRYw05oFmWf'
+	SECRET_KEY = '****'
 	r = requests.post('https://www.google.com/recaptcha/api/siteverify', data={'secret': SECRET_KEY, 'response': token})
 	status = r.status_code
 	response = jsonify({

@@ -115,7 +115,7 @@ class NavBar extends React.Component {
             </div>
           </nav>
           <div className="progress" style={{'height': '5px'}}>
-            <div className="progress-bar" role="progressbar" id={'progress'}
+            <div className="progress-bar bg-success progress-bar-striped" role="progressbar" id={'progress'}
                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="95"
                  style={{'width': '2%'}}/>
           </div>

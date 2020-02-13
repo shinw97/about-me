@@ -40,7 +40,12 @@ class ContactMe extends React.Component {
     const formEl = document.forms.messageForm;
 
     let formData = new FormData();
-    const keys = ['Name', 'Email', 'Subject', 'Message', 'g-recaptcha-response'];
+    const keys = [
+      'Name',
+      'Email',
+      'Subject',
+      'Message',
+      'g-recaptcha-response'];
 
     for (let i = 0; i < keys.length; i++) {
       formData.append(keys[i], formEl.elements[keys[i]].value);
@@ -88,7 +93,7 @@ class ContactMe extends React.Component {
     // alert(isMobile);
 
     const email = isMobile ?
-        <div className={'hideme'}>
+        <div className={'hideme'} style={{'display': 'inline', margin: '0px 10px 0px auto'}}>
           <a href={'mailto:shinw97@hotmail.com'}
              style={{'textDecoration': 'none'}}>
             <button className="btn rounded-circle shadow"
@@ -105,7 +110,7 @@ class ContactMe extends React.Component {
         <div className="hideme card mb-3 shadow w3-hover-light-grey"
              style={{
                'width': '30%',
-               'margin': 'auto',
+               'margin': '0px 10px 0px auto',
                'cursor': 'pointer',
              }}
         >
@@ -126,25 +131,75 @@ class ContactMe extends React.Component {
           </div>
         </div>;
 
+    const linkedIn = isMobile ?
+        <div className={'hideme'} style={{'display': 'inline', margin: '0px auto 0px 10px'}}>
+          <a href={'https://www.linkedin.com/in/shinw97/'}
+             style={{'textDecoration': 'none'}}
+             target={'_blank'}
+          >
+            <button className="btn rounded-circle shadow"
+                    style={{
+                      'width': '70px',
+                      'height': '70px',
+                      'margin': 'auto',
+                    }}>
+              <i className="fa fa-linkedin fa-fw w3-xxlarge"/>
+            </button>
+          </a>
+        </div>
+        :
+        <div className="hideme card mb-3 shadow w3-hover-light-grey"
+             style={{
+               'width': '30%',
+               'margin': '0px auto 0px 10px',
+               'cursor': 'pointer',
+             }}
+        ><a href={'https://www.linkedin.com/in/shinw97/'}
+            style={{'textDecoration': 'none', color: 'inherit'}}
+            target={'_blank'}
+        >
+          <div className="row no-gutters" data-toggle="tooltip"
+               data-placement="right" title="Click to copy"
+              // style={{'minWidth': '100%'}}
+          >
+            <div className="col-md-4" style={{'margin': 'auto'}}>
+              <i className="fa fa-linkedin fa-fw w3-xxlarge"/>
+            </div>
+            <div className="col-md-8">
+              <div className="card-body text-left">
+                <h5 className="card-title">LinkedIn</h5>
+                <p className="card-text">linkedin.com/in/shinw97/</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        </div>;
+
     return (
         <div className="w3-container w3-light-grey"
              style={{'padding': '100px 16px'}}
              id="contact">
           <h3 className="w3-center hideme">CONTACT</h3>
-          <p className="w3-center w3-large hideme">Feel free to contact me at:</p>
+          <p className="w3-center w3-large hideme">Feel free to contact me
+            at:</p>
+
           <div style={{'padding': '10px'}}>
-            {email}
+            <div style={{display: 'flex'}}>
+              {email}
+              {linkedIn}
+            </div>
             <br/>
-            <p className="w3-center w3-large hideme">... or drop a message here!</p>
+            <p className="w3-center w3-large hideme">... or drop a message
+              here!</p>
             <form
-                  className={'hideme'}
-                  action=""
-                  method={'post'}
-                  target="invisible" id={'messageForm'}
-                  style={{
-                    'width': isMobile ? '100%' : '60%',
-                    'margin': 'auto',
-                  }}>
+                className={'hideme'}
+                action=""
+                method={'post'}
+                target="invisible" id={'messageForm'}
+                style={{
+                  'width': isMobile ? '100%' : '60%',
+                  'margin': 'auto',
+                }}>
               <p><input className="w3-input w3-border rounded" type="text"
                         placeholder="Name" required name="Name"/></p>
               <p><input className="w3-input w3-border rounded" type="text"

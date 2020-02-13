@@ -6,7 +6,7 @@ class Page2 extends React.Component {
   render() {
     return (
         <div className="w3-container w3-raleway" style={{"padding":"100px 16px"}} id="about">
-          <h3 className="hideme w3-center">WHAT AM I?</h3>
+          <h3 className="hideme w3-center">WHO AM I?</h3>
           <p className="hideme w3-center w3-large">Some overview simple facts about me.</p>
           <div className="w3-row-padding w3-center" style={{"marginTop":"64px"}}>
             <div className="hideme w3-quarter">
@@ -17,7 +17,7 @@ class Page2 extends React.Component {
             <div className="hideme w3-quarter">
               <i className="material-icons w3-margin-bottom w3-jumbo">memory</i>
               <p className="w3-large">AI Developer,</p>
-              <p>I'm an Artificial Intelligence programme graduate. Deep Learning, Computer Vision, Face Recognition, Statistical Regression... these terminologies aren't stranger to me, they are part of my knowledge.</p>
+              <p>I'm an Artificial Intelligence programme graduate. Deep Learning, Computer Vision, Face Recognition, Fuzzy Logic... these terminologies aren't stranger to me, they are part of my knowledge.</p>
             </div>
             <div className="hideme w3-quarter">
               <i className="fa fa-wpexplorer w3-margin-bottom w3-jumbo"/>

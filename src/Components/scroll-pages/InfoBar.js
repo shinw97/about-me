@@ -12,7 +12,7 @@ class InfoBar extends React.Component {
           </div>
           <div className="hideme w3-quarter w3-quarter-padding">
             With Degree in<br/>
-            <span className="w3-xlarge">Bachelor of Computer Science (Artificial Intelligence)</span>
+            <span className="w3-xlarge">Bachelor of <br/>Computer Science <br/>(Artificial Intelligence)</span>
           </div>
           <div className="hideme w3-quarter w3-quarter-padding">
             Started on<br/>

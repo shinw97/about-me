@@ -1,10 +1,16 @@
+/* Smartphones ----------- */
+@media only screen and (max-width: 760px) {
+    .page1-additional { display: none; }
+}
+
+
 .full-height{
     height: 100%;
     background-color: #282c34;
 
     background-size: cover;
     background-position: center;
-    background-image: url("https://images.firstpost.com/wp-content/uploads/large_file_plugin/2019/08/1566962679_GerardoKorn_Bleed.jpg");
+    background-image: url("../resources/0_ctPqSftBqSOwwrMp.gif");
 
     min-height: 100vh;
     display: flex;

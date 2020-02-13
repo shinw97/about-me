@@ -51,7 +51,7 @@ class Page3 extends React.Component {
                 Malaysian boy from <b>Butterworth,
                   Penang</b>,
                 a small town located at the opposite bank of the lovely
-                UNESCO historical heritage city Georgetown.<br/><br/>
+                historical heritage city Georgetown.<br/><br/>
                 I am a <b>Computer Science graduate</b> from <b>University of
                   Malaya</b>, and
                 had been living in the metropolitan city of Kuala Lumpur during
@@ -74,7 +74,7 @@ class Page3 extends React.Component {
                 // style={{'padding': '15px 10px'}}
             >
               <img
-                  className="hideme w3-image w3-round-large w3-hover-opacity modimgresp"
+                  className="hideme w3-image w3-round-large w3-hover-opacity modimgresp shadow"
                   src={profilePic}
                   alt="ProfilePic"
                   style={{
@@ -105,7 +105,6 @@ class Page3 extends React.Component {
             {/*  className="w3-button w3-hover-red w3-xlarge w3-display-topright"*/}
             {/*  style={{"top":"43px"}}>×</span>*/}
           </div>
-
         </div>
     );
 

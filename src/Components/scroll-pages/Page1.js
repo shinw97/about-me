@@ -4,6 +4,11 @@ import $ from 'jquery';
 
 class Page1 extends React.Component {
 
+  componentDidMount() {
+    let i = 0;
+    this.typeWriterEffect(i);
+  }
+
   copyToClipBoard = () => {
     const dummy = document.createElement('textarea');
     document.body.appendChild(dummy);
@@ -15,11 +20,37 @@ class Page1 extends React.Component {
     // alert('Copied email to clipboard!\nshinw97@hotmail.com');
   };
 
+  typeWriterEffect = (i, s = true) => {
+    let txt = 'I am Shin Wei, keep scrolling to know more about me!';
+
+    if (i < txt.length) {
+      document.getElementById(
+          'type-effect').innerHTML = document.getElementById(
+          'type-effect').innerHTML.slice(0, i) + txt.charAt(i) + '|';
+      i++;
+      setTimeout(() => this.typeWriterEffect(i), 75);
+    } else {
+      if (s) {
+        document.getElementById(
+            'type-effect').innerHTML = document.getElementById('type-effect')
+            .innerHTML
+            .slice(0, i) + '|';
+        setTimeout(() => this.typeWriterEffect(i, false), 256);
+      } else {
+        document.getElementById(
+            'type-effect').innerHTML = document.getElementById(
+            'type-effect').innerHTML.slice(0, i) + '&nbsp';
+        setTimeout(() => this.typeWriterEffect(i, true), 256);
+      }
+    }
+  };
+
   render() {
+
     return (
         <div className={'full-height'}>
           <span className="w3-xxxlarge w3-wide">Hi, welcome to my personal profiling page.</span><br/><br/>
-          <span className="w3-xlarge">I am Shin Wei, keep scrolling to know more about me!</span>
+          <span className="w3-xlarge" id={'type-effect'}>_</span>
           <div
               className="w3-display-bottomleft w3-text-light-grey w3-xxlarge page1-additional"
               style={{padding: '24px 64px'}}>

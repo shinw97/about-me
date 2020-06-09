@@ -12,22 +12,22 @@ class Page2 extends React.Component {
             <div className="hideme w3-quarter">
               <i className="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"/>
               <p className="w3-large">A Computer Scientist,</p>
-              <p>Programmer, developer, software engineer,... potayto-potahto, they're not very distinct in general. I am all of these and a computer scientist would be a better summary to these terminologies.</p>
+              <p>Programmer, developer, software engineer,... po-tay-to po-tah-to. I could be all of these and a <b>Computer Scientist</b> would be a better representation about me.</p>
             </div>
             <div className="hideme w3-quarter">
               <i className="material-icons w3-margin-bottom w3-jumbo">memory</i>
               <p className="w3-large">AI Developer,</p>
-              <p>I'm an Artificial Intelligence programme graduate. Deep Learning, Computer Vision, Face Recognition, Fuzzy Logic... these terminologies aren't stranger to me, they are part of my knowledge.</p>
+              <p>Specifically, I'm an <b>Artificial Intelligence</b> programme graduate. Deep Learning, Computer Vision, Fuzzy Logic... these terminologies aren't strange to me.</p>
             </div>
             <div className="hideme w3-quarter">
               <i className="fa fa-wpexplorer w3-margin-bottom w3-jumbo"/>
               <p className="w3-large">and Knowledge Discoverer,</p>
-              <p>New technologies and knowledge, together with vast opportunities are constantly emerging in this era powered by Industry 4.0. Knowledge discovery would be my first priority in every decision made.</p>
+              <p>New technologies and knowledge together with vast opportunities are rapidly emerging in the fast-changing era. In any circumstances, <b>Knowledge Discovery</b> is my first priority.</p>
             </div>
             <div className="hideme w3-quarter">
               <i className="fa fa-wrench w3-margin-bottom w3-jumbo"/>
               <p className="w3-large">with some hard-skills.</p>
-              <p>As an AI programme graduate, I am obsessed to all sorts of AI techniques especially Deep Learning and Data Science frameworks. Besides, I also have experience in developing front-end and back-end web application.</p>
+              <p>Apart from my obsession to all sorts of AI techniques especially Deep Learning and Data Science frameworks. I also have experience in front-end and back-end web development.</p>
             </div>
           </div>
         </div>

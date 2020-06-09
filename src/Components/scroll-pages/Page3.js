@@ -47,16 +47,16 @@ class Page3 extends React.Component {
               >
                 Let's begin with some basic biography</h3>
 
-              <p className={'hideme'}><br/>I am <b>Lim Shin Wei</b>, 22, a
-                Malaysian boy from <b>Butterworth,
+              <p className={'hideme'}><br/>I am <b>Lim Shin Wei</b> (Simplified Chinese: 林 新伟), 22,
+                Malaysian from <b>Butterworth,
                   Penang</b>,
-                a small town located at the opposite bank of the lovely
+                a small town located at the opposite bank of the scenic
                 historical heritage city Georgetown.<br/><br/>
                 I am a <b>Computer Science graduate</b> from <b>University of
                   Malaya</b>, and
                 had been living in the metropolitan city of Kuala Lumpur during
                 my studies in the university. <br/><br/> I am a computer
-                scientist, programmer, AI developer, software engineer, and also a web
+                scientist, programmer, AI developer, software engineer, could be a web
                 developer as well in both front-end and backend.
               </p>
               <br/>

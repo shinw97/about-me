@@ -159,7 +159,7 @@ class ContactMe extends React.Component {
             target={'_blank'}
         >
           <div className="row no-gutters" data-toggle="tooltip"
-               data-placement="right" title="Click to copy"
+               data-placement="right"
               // style={{'minWidth': '100%'}}
           >
             <div className="col-md-4" style={{'margin': 'auto'}}>

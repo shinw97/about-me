@@ -38,7 +38,8 @@ class Page3 extends React.Component {
              style={{'padding': '60px 16px', 'maxHeight': '100%'}}>
           {/*style={!isOnWeb ? {'padding': '60px 16px', 'max-height': '100%'} : {'padding': '100px 16px'}} >*/}
           <div className="w3-row-padding">
-            <div className="w3-col m6 text-left" ref={this.myRef}>
+
+            <div className="w3-col m7 text-left" ref={this.myRef}>
               <h3 className={'hideme text-left'}
                   style={{
                     'padding': '10px 0px 10px 0px',
@@ -66,8 +67,8 @@ class Page3 extends React.Component {
               {/*      className="fa fa-th"> </i> View Our Works</a>*/}
               {/*</p>*/}
             </div>
-            <div className="w3-col m6"
 
+            <div className="w3-col m4"
                  style={this.state.mounted ?
                      {'height': this.state.height} :
                      {}}
@@ -85,6 +86,7 @@ class Page3 extends React.Component {
                   onClick={() => this.onclickImage(false)}
               />
             </div>
+
 
           </div>
           <div id="img01" className="w3-modal"

@@ -21,7 +21,7 @@ class Page1 extends React.Component {
   };
 
   typeWriterEffect = (i, s = true) => {
-    let txt = 'I am Shin Wei, keep scrolling to know more about me!';
+    let txt = 'I am Shin Wei, keep scrolling to know more about ';
 
     if (i < txt.length) {
       document.getElementById(
@@ -34,12 +34,12 @@ class Page1 extends React.Component {
         document.getElementById(
             'type-effect').innerHTML = document.getElementById('type-effect')
             .innerHTML
-            .slice(0, i) + '|';
+            .slice(0, i) + 'ME!|';
         setTimeout(() => this.typeWriterEffect(i, false), 256);
       } else {
         document.getElementById(
             'type-effect').innerHTML = document.getElementById(
-            'type-effect').innerHTML.slice(0, i) + '&nbsp';
+            'type-effect').innerHTML.slice(0, i) + '|';
         setTimeout(() => this.typeWriterEffect(i, true), 256);
       }
     }
@@ -48,8 +48,8 @@ class Page1 extends React.Component {
   render() {
 
     return (
-        <div className={'full-height'}>
-          <span className="w3-xxxlarge w3-wide">Hi, welcome to my personal profiling page.</span><br/><br/>
+        <div className={'full-height-0'}>
+          <span className="w3-xxxlarge w3-wide">Hi, welcome to my personal profile site.</span><br/><br/>
           <span className="w3-xlarge" id={'type-effect'}>_</span>
           <div
               className="w3-display-bottomleft w3-text-light-grey w3-xxlarge page1-additional"

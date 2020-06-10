@@ -7,7 +7,7 @@ class Page2 extends React.Component {
     return (
         <div className="w3-container w3-raleway" style={{"padding":"100px 16px"}} id="about">
           <h3 className="hideme w3-center">WHO AM I?</h3>
-          <p className="hideme w3-center w3-large">Some overview simple facts about me.</p>
+          <p className="hideme w3-center w3-large">Overview and some simple facts about what I am doing.</p>
           <div className="w3-row-padding w3-center" style={{"marginTop":"64px"}}>
             <div className="hideme w3-quarter">
               <i className="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"/>
@@ -26,8 +26,8 @@ class Page2 extends React.Component {
             </div>
             <div className="hideme w3-quarter">
               <i className="fa fa-wrench w3-margin-bottom w3-jumbo"/>
-              <p className="w3-large">with some hard-skills.</p>
-              <p>Apart from my obsession to all sorts of AI techniques especially Deep Learning and Data Science frameworks. I also have experience in front-end and back-end web development.</p>
+              <p className="w3-large">with some skills.</p>
+              <p>Apart from my obsession to all sorts of AI techniques especially Deep Learning and AI frameworks, I also have experience in front-end and back-end web development.</p>
             </div>
           </div>
         </div>
